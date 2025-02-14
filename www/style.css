@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+h1 {
+    color: blue;
+}
+img{
+    width:500px;
+    height: 300px;
+}
