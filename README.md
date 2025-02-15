@@ -5,3 +5,4 @@ Developed a webserver to handle get requests using C
 2. Then ".\main.exe"
 3. Then you can type "http://localhost:8080"
 4. If you want to check multithreading process you can open two browsers and give "http://localhost:8080/index.html" in one browser and "http://localhost:8080/about.html" in another browser.
+   <h1>Using .\test.bat command you can stimulate how 10000 requests are handled using multi threading</h1>
