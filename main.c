@@ -3,7 +3,7 @@
 #include <string.h>
 #include <winsock2.h> //windows specific header fornworking with network sockets
 #include <windows.h> //windows specific header for working with windows API
-#include "handleclient.h"
+#include "./client/handleclient.h"
 #include "server_config.h"
 
 #pragma comment(lib, "ws2_32.lib")  //tells the compiler to link the Winsock library (ws2_32.lib), which is necessary for the socket-related functions to work correctly on Windows.

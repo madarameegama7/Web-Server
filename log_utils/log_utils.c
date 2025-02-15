@@ -3,7 +3,7 @@
 #include <time.h>
 
 void log_message(const char *format, ...) {
-    FILE *log_file = fopen("server.log", "a");
+    FILE *log_file = fopen("./log/server.log", "a");
     if (!log_file) return;
 
     va_list args;
