@@ -4,6 +4,13 @@
 #include <windows.h>
 #include "./client/handleclient.h"
 
+/*this program is a multi threaded TCP server that listens on port 8080
+Spawns a new thread to handle each incoming client connection
+*/
+
+//handle_client_thread, is a Windows thread function designed to handle a single client connection
+//DWORD WINAPI-this sepcifies that the function follows Windows API calling convention(WINAPI) and returns DWORD(unsigned 32 bit integer)
+//LPVOID parameter - pointer to a void, used to pass data to the thread function, generic pointer to the client's socket, which will be casted to appropriate type inside the function
 DWORD WINAPI handle_client_thread(LPVOID client_socket) {
     SOCKET client_fd = *(SOCKET*)client_socket;
     handle_client(client_fd);
