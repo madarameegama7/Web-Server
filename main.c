@@ -20,7 +20,9 @@ DWORD WINAPI handle_client_thread(LPVOID client_socket) {
 }
 
 int main() {
+    // Initialize Winsock
     WSADATA wsa;
+    
     SOCKET server_fd, *client_fd;
     struct sockaddr_in server, client;
     int client_size = sizeof(struct sockaddr_in);
