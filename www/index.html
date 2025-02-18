@@ -2,12 +2,50 @@
 <html>
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Welcome to My Web Server</h1>
-    <p><a href="about.html">Go to About Page</a></p>
-    <img src="./images/flowers.jpg" alt="Test Image">
+    <section class="blog" id="blog">
+        <div class="heading">
+            <h2>Welcome to Travel Lanka</h2>
+            <span>Travel Packages</span>
+            
+            <p>Join with us to <br>travel around Sri Lanka</p>
+        
+            <!-- Video Section -->
+            <video width="320" height="240" controls>
+                <source src="./videos/travel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div class="blog-container container">
+            <div class="box">
+                <img src="./images/city/anuradhapura.jpg" alt="" width="100px" height="200px">
+                <span>Feb 14 2021</span>
+                <h3>Anuradhapura</h3>
+                <p>This package includes visits to<br>Jetavanaramaya, Jaya Sri Maha Bodi,<br>Ruwanwelisaya,Kuttam Pokuna</p>
+                <a href="#" class="blog-btn" style = "color: red">Book Now<i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="box">
+                <img src="./images/city/bentota.jpg" alt="" width="100px" height="200px">
+                <span>Feb 14 2021</span>
+                <h3>Bentota</h3>
+                <p>This package includes visits to<br>Bentota River Safari, Bentota Beach,<br>Brief Garden, Turtle conservation</p>
+                <a href="#" class="blog-btn" style = "color: red">Book Now<i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="box">
+                <img src="./images/city/jaffna.jpg" alt="" width="100px" height="200px">
+                <span>Feb 14 2021</span>
+                <h3>Jaffna</h3>
+                <p>This package includes visits to<br>Nagadipa Viharaya, Nallur Kovil<br>Keerimalai Hot Water Springs<br>Point Pedro and Surroundings</p>
+                <a href="#" class="blog-btn" style = "color: red">Book Now<i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+           
+        </div>
+    </section>
+
+   
 </body>
 </html>

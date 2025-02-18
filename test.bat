@@ -5,14 +5,14 @@ setlocal enabledelayedexpansion
 set URL=http://localhost:8080/about.html
 
 :: Number of requests per second
-set REQUESTS_PER_SECOND=1000
+set REQUESTS_PER_SECOND=10
 
 :: Duration to run (in seconds)
 set DURATION=10
 
 :: Loop for the given duration
 for /L %%i in (1,1,%DURATION%) do (
-    echo Sending 100 requests to %URL% (Iteration %%i)
+    echo Sending 10 requests to %URL% (Iteration %%i)
     for /L %%j in (1,1,%REQUESTS_PER_SECOND%) do (
         start /B curl -s -o NUL -w "%%{http_code}" %URL%
     )

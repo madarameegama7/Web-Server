@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "handleclient.h": "c"
+    "handleclient.h": "c",
+    "mime_utils.h": "c"
   }
 }

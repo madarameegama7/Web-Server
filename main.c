@@ -13,30 +13,41 @@ Spawns a new thread to handle each incoming client connection
 //LPVOID parameter - pointer to a void, used to pass data to the thread function, generic pointer to the client's socket, which will be casted to appropriate type inside the function
 DWORD WINAPI handle_client_thread(LPVOID client_socket) {
     SOCKET client_fd = *(SOCKET*)client_socket;
-    handle_client(client_fd);
+    handle_client(client_fd); //process client request
     closesocket(client_fd);
     free(client_socket);
     return 0;
 }
 
 int main() {
+    // Initialize Winsock
     WSADATA wsa;
-    SOCKET server_fd, *client_fd;
+    
+    SOCKET server_fd; //SOCKET represents a unique ID assigned to a socket when created
+    SOCKET *client_fd;
+    
+    //stores server IP and port , in client store info about connected client
     struct sockaddr_in server, client;
     int client_size = sizeof(struct sockaddr_in);
 
+    //specifies we wnat Winsok version 2.2
     WSAStartup(MAKEWORD(2,2), &wsa);
-    server_fd = socket(AF_INET, SOCK_STREAM, 0);
 
-    server.sin_family = AF_INET;
-    server.sin_addr.s_addr = INADDR_ANY;
-    server.sin_port = htons(8080);
+    //Create TCP socket
+    server_fd = socket(AF_INET, SOCK_STREAM, 0); // 0 for TCP sock_stream
 
+    server.sin_family = AF_INET; //protocol family-ipv4
+    server.sin_addr.s_addr = INADDR_ANY; //the server will accept connections from any network interface 
+    server.sin_port = htons(8080); //converts integer from host byte order to network byte order to use in network functions
+
+    //assigns the socket to the IP address and port specified in the server
     bind(server_fd, (struct sockaddr*)&server, sizeof(server));
+    //Ready to accept client connections, 5 pending connections can wait before being rejected
     listen(server_fd, 5);
     
     printf("Server running on port 8080...\n");
 
+    //runs until the program in manually stopped
     while (1) {
         client_fd = malloc(sizeof(SOCKET));
         *client_fd = accept(server_fd, (struct sockaddr*)&client, &client_size);
