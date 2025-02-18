@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 set URL=http://localhost:8080/about.html
 
 :: Number of requests per second
-set REQUESTS_PER_SECOND=10
+set REQUESTS_PER_SECOND=100
 
 :: Duration to run (in seconds)
 set DURATION=10
